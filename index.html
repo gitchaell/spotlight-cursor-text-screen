@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight Cursor Text Screen</title>
+  <link rel="stylesheet" href="assets/fonts/paoui/paoui.fontface.css">
+  <style>
+    body {
+      background: black;
+      margin: 0;
+    }
+
+    div {
+      color: white;
+      font-family: 'paoui';
+      font-size: 7.5rem;
+      line-height: 1;
+      text-align: center;
+      display: grid;
+      place-content: center;
+      height: 100vh;
+      cursor: default;
+      -webkit-text-stroke: 2px white;
+      -webkit-text-fill-color: transparent;
+      background-image: url('/assets/shapes/diamond.svg');
+      background-repeat: no-repeat;
+      background-size: 31.5rem;
+      background-position: 50%;
+      -webkit-background-clip: text;
+    }
+  </style>
+</head>
+
+<body>
+  <div>Michaell Alavedra</div>
+
+  <script>
+    const element = document.querySelector('div');
+
+    element.addEventListener('pointermove', ({ offsetX, offsetY}) => {
+      element.style.backgroundPosition = `calc(${offsetX}px - 15.75rem) calc(${offsetY}px - 15.75rem)`;
+    });
+  </script>
+</body>
+
+</html>
